@@ -1,0 +1,15 @@
+web:
+  build: ./
+  command: sh -c 'npm install && node src/servidor.js'
+  ports:
+      - '3000:3000'
+  volumes:
+    - /home/mona/Escritorio/bbddNOsql/TP2 Node JS y Redis/TP2 parte1-star wars/codigo/api:/api
+  links:
+    - "db:redis-contenedor"
+
+
+db:
+  image: redis
+  ports:
+    - "6379:6379"

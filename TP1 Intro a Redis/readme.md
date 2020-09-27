@@ -40,7 +40,7 @@
 - **Descargar imágenes disponibles en Docker Hub:** 
     > $ docker pull *<*imagen*>*
 
-- **Correr imágenes:** 
+- **Crear y correr imágenes:** 
     > $ docker run *<*imagen*>*
     - **-it:** da acceso a la consola del contenedor
 
