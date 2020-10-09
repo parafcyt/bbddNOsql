@@ -9,8 +9,8 @@ exports.prueba = (req, res) => {
 
 //funcion para agregar episodios y personaje
 exports.agregarPersonaje = (req, res) => {
-    const episodio = req.body.episodio;
-    const personaje = req.body.personaje;
+    const episodio = req.params.episodio;
+    const personaje = req.params.personaje;
 
     db.lpush(episodio, personaje, (err, reply) => {
         if (err) {
@@ -25,8 +25,8 @@ exports.agregarPersonaje = (req, res) => {
 
 //funcion para eliminar personaje de episodio pasado
 exports.eliminarPersonaje = (req, res) => {
-    const episodio = req.body.episodio;
-    const personaje = req.body.personaje;
+    const episodio = req.params.episodio;
+    const personaje = req.params.personaje;
 
     db.lrem(episodio, 0, personaje, (err, reply) => {
         if (err) {

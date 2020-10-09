@@ -1,0 +1,25 @@
+.container {
+    margin-top: 2rem;
+}
+
+.center {
+    margin: auto;
+    width: 30rem;
+}
+
+.list-group-item {
+    background-color: black;
+    color: white;
+    border-color: rgb(71, 71, 71);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botones {
+    text-align: right;
+}
+
+.botonCancelar {
+    margin-right: 10px;
+}

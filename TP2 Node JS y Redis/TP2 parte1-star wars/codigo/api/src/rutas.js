@@ -6,9 +6,9 @@ const controladores = require('./controladores');
 const rutas = express.Router();
 
 rutas.get('/', controladores.prueba);
-rutas.post('/agregarpersonaje', controladores.agregarPersonaje);
+rutas.post('/agregarpersonaje/:episodio/:personaje', controladores.agregarPersonaje);
 rutas.get('/listarpersonajes/:episodio', controladores.listarPersonajes);
-rutas.delete('/eliminarpersonaje', controladores.eliminarPersonaje);
+rutas.delete('/eliminarpersonaje/:episodio/:personaje', controladores.eliminarPersonaje);
 
 
 

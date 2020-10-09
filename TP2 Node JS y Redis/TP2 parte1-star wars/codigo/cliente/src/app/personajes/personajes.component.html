@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="center">
+        <button type="button" class="btn btn-primary" (click)="ngxSmartModalService.getModal('myModal').open()">Nuevo</button>
+        <br>
+        <br>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let personaje of personajes">{{personaje | titlecase}}
+                <button type="button" class="btn btn-outline-danger" (click)="eliminarPersonaje(personaje)">Eliminar</button>
+            </li>
+
+        </ul>
+    </div>
+
+    <ngx-smart-modal #myModal identifier="myModal">
+
+        <p>Agregar personaje</p>
+        <div class="input-group mb-3">
+            <input #textbox type="text" class="form-control" placeholder="Ej:Obiwan" aria-label="Ej:Obiwan" aria-describedby="basic-addon1" (keyup.enter)="agregarPersonaje(textbox.value); myModal.close()">
+        </div>
+        <div class="botones">
+            <button type="button" class="btn btn-outline-danger botonCancelar" (click)="myModal.close()">Cancelar</button>
+            <button type="button" class="btn btn-outline-success" (click)="agregarPersonaje(textbox.value); myModal.close()">Aceptar</button>
+        </div>
+
+
+
+    </ngx-smart-modal>
+
+
+
+</div>
