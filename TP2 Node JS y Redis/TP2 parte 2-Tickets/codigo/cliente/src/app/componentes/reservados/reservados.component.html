@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="centrado">
+        <button type="button" class="btn btn-outline-warning float-right actualizar" (click)="listarReservados()"><i class="fa fa-refresh"></i></button>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col"># Ticket</th>
+                    <th scope="col">Tiempo restante</th>
+                    <th scope="col">Accion</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ticket of ticketsReservados">
+                    <td>{{ticket[0]}}</td>
+                    <td>{{ticket[1]}} minutos</td>
+                    <td><button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-success btn-sm" (click)="ticketAComprar=ticket[0]">Comprar</button></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Comprar Ticket</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                      Tarjeta de Crédito
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                      Débito
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                    <label class="form-check-label" for="exampleRadios3">
+                      MercadoPago
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-outline-success" data-dismiss="modal" (click)="comprar(ticketAComprar)">Comprar</button>
+            </div>
+        </div>
+    </div>
+</div>
